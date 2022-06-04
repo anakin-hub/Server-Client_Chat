@@ -36,9 +36,8 @@ int main()
 	
 	cout << "Insira o nick: ";
 	cin >> protc.nick;
-
-	cout <<"\t" << protc.nick << endl;
-	cout << "SEJA BEM VINDO\n";
+	cout << "__________________" << protc.nick << "__________________\n";
+	cout << "_______________" << "SEJA BEM VINDO" << "________________\n";
 	printf("\nInitialising Winsock...");
 	if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
 	{
@@ -100,7 +99,6 @@ void send_data()
 		memset(message, 0, sizeof(message));
 		cout << "Digite uma mensagem: ";
 		cin.getline(message, 50);
-		cout << message << endl;
 
 		check = send(s, message, strlen(message), 0);
 
@@ -135,7 +133,6 @@ void recv_data()
 		else if (check > 0)
 		{
 			server_reply[recv_size] = '\0';
-			cout << "\nReceived message: ";
 			puts(server_reply);
 			if (strcmp(server_reply, "/quited") == 0)
 			{
@@ -157,6 +154,6 @@ void disconect(int signal)
 void login()
 {
 	char msg[20];
-	sprintf(msg, "/log %s", protc.nick);
+	sprintf(msg, "/log%s", protc.nick);
 	send(s, msg, 20, 0);
 }
