@@ -1,0 +1,3 @@
+﻿  main.cpp
+D:\Studying\Repositórios - GitHub\Server-Client_Chat\Chat\Socket\main.cpp(105,46): warning C4267: 'argumento': conversão de 'size_t' para 'int', possível perda de dados
+  Socket.vcxproj -> D:\Studying\Repositórios - GitHub\Server-Client_Chat\Chat\x64\Debug\Socket.exe

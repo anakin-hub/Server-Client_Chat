@@ -1,0 +1,196 @@
+﻿  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(103,1): warning C4005: 'AF_IPX': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(457): message : consulte a definição anterior de 'AF_IPX'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(147,1): warning C4005: 'AF_MAX': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(476): message : consulte a definição anterior de 'AF_MAX'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(187,1): warning C4005: 'SO_DONTLINGER': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(399): message : consulte a definição anterior de 'SO_DONTLINGER'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(240,25): error C2011: 'sockaddr': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(482): message : consulte a declaração de 'sockaddr'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(442,5): error C2143: erro de sintaxe: '}' ausente antes de 'constante'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(442,5): error C2059: erro de sintaxe: 'constante'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(496,1): error C2143: erro de sintaxe: ';' ausente antes de '}'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(496,10): error C4430: faltando especificador de tipo - int assumido. Observação: C++ não suporta default-int
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(496,20): error C4430: faltando especificador de tipo - int assumido. Observação: C++ não suporta default-int
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(577,1): warning C4005: 'IN_CLASSA': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(284): message : consulte a definição anterior de 'IN_CLASSA'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(583,1): warning C4005: 'IN_CLASSB': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(290): message : consulte a definição anterior de 'IN_CLASSB'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(589,1): warning C4005: 'IN_CLASSC': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(296): message : consulte a definição anterior de 'IN_CLASSC'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(600,1): warning C4005: 'INADDR_ANY': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(301): message : consulte a definição anterior de 'INADDR_ANY'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(602,1): warning C4005: 'INADDR_BROADCAST': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(303): message : consulte a definição anterior de 'INADDR_BROADCAST'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\ws2def.h(638,28): error C2011: 'sockaddr_in': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(309): message : consulte a declaração de 'sockaddr_in'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(136,23): error C2011: 'fd_set': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(65): message : consulte a declaração de 'fd_set'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(156,1): warning C4005: 'FD_CLR': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(94): message : consulte a definição anterior de 'FD_CLR'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(171,1): warning C4005: 'FD_SET': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(99): message : consulte a definição anterior de 'FD_SET'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(180,16): error C2011: 'timeval': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(108): message : consulte a declaração de 'timeval'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(236,17): error C2011: 'hostent': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(164): message : consulte a declaração de 'hostent'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(249,16): error C2011: 'netent': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(177): message : consulte a declaração de 'netent'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(256,17): error C2011: 'servent': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(184): message : consulte a declaração de 'servent'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(268,18): error C2011: 'protoent': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(196): message : consulte a declaração de 'protoent'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(364,24): error C2011: 'WSAData': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(319): message : consulte a declaração de 'WSAData'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(462,18): error C2011: 'sockproto': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(491): message : consulte a declaração de 'sockproto'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(504,16): error C2011: 'linger': redefinição do tipo 'struct'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(528): message : consulte a declaração de 'linger'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(517,1): warning C4005: 'SOMAXCONN': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(541): message : consulte a definição anterior de 'SOMAXCONN'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(552,1): warning C4005: 'FD_READ': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(559): message : consulte a definição anterior de 'FD_READ'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(555,1): warning C4005: 'FD_WRITE': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(560): message : consulte a definição anterior de 'FD_WRITE'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(558,1): warning C4005: 'FD_OOB': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(561): message : consulte a definição anterior de 'FD_OOB'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(561,1): warning C4005: 'FD_ACCEPT': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(562): message : consulte a definição anterior de 'FD_ACCEPT'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(564,1): warning C4005: 'FD_CONNECT': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(563): message : consulte a definição anterior de 'FD_CONNECT'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(567,1): warning C4005: 'FD_CLOSE': redefinição de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(564): message : consulte a definição anterior de 'FD_CLOSE'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1625,1): error C2375: 'accept': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(739): message : consulte a declaração de 'accept'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1647,1): error C2375: 'bind': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(744): message : consulte a declaração de 'bind'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1668,1): error C2375: 'closesocket': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(749): message : consulte a declaração de 'closesocket'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1685,1): error C2375: 'connect': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(751): message : consulte a declaração de 'connect'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1706,1): error C2375: 'ioctlsocket': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(756): message : consulte a declaração de 'ioctlsocket'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1729,1): error C2375: 'getpeername': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(761): message : consulte a declaração de 'getpeername'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1750,1): error C2375: 'getsockname': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(766): message : consulte a declaração de 'getsockname'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1771,1): error C2375: 'getsockopt': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(771): message : consulte a declaração de 'getsockopt'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1796,1): error C2375: 'htonl': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(778): message : consulte a declaração de 'htonl'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1813,1): error C2375: 'htons': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(780): message : consulte a declaração de 'htons'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1831,1): error C2375: 'inet_addr': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(782): message : consulte a declaração de 'inet_addr'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1849,1): error C2375: 'inet_ntoa': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(784): message : consulte a declaração de 'inet_ntoa'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1949,1): error C2375: 'listen': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(786): message : consulte a declaração de 'listen'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1968,1): error C2375: 'ntohl': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(790): message : consulte a declaração de 'ntohl'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(1985,1): error C2375: 'ntohs': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(792): message : consulte a declaração de 'ntohs'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2002,1): error C2375: 'recv': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(794): message : consulte a declaração de 'recv'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2025,1): error C2375: 'recvfrom': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(800): message : consulte a declaração de 'recvfrom'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2052,1): error C2375: 'select': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(808): message : consulte a declaração de 'select'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2077,1): error C2375: 'send': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(815): message : consulte a declaração de 'send'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2100,1): error C2375: 'sendto': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(821): message : consulte a declaração de 'sendto'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2127,1): error C2375: 'setsockopt': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(829): message : consulte a declaração de 'setsockopt'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2152,1): error C2375: 'shutdown': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(836): message : consulte a declaração de 'shutdown'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2172,1): error C2375: 'socket': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(840): message : consulte a declaração de 'socket'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2197,1): error C2375: 'gethostbyaddr': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(847): message : consulte a declaração de 'gethostbyaddr'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2219,1): error C2375: 'gethostbyname': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(852): message : consulte a declaração de 'gethostbyname'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2236,1): error C2375: 'gethostname': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(854): message : consulte a declaração de 'gethostname'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2276,1): error C2375: 'getservbyport': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(858): message : consulte a declaração de 'getservbyport'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2295,1): error C2375: 'getservbyname': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(862): message : consulte a declaração de 'getservbyname'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2314,1): error C2375: 'getprotobynumber': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(866): message : consulte a declaração de 'getprotobynumber'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2331,1): error C2375: 'getprotobyname': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(868): message : consulte a declaração de 'getprotobyname'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2351,1): error C2375: 'WSAStartup': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(872): message : consulte a declaração de 'WSAStartup'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2371,1): error C2375: 'WSACleanup': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(876): message : consulte a declaração de 'WSACleanup'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2388,1): error C2375: 'WSASetLastError': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(878): message : consulte a declaração de 'WSASetLastError'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2405,1): error C2375: 'WSAGetLastError': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(880): message : consulte a declaração de 'WSAGetLastError'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2426,1): error C2375: 'WSAIsBlocking': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(882): message : consulte a declaração de 'WSAIsBlocking'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2444,1): error C2375: 'WSAUnhookBlockingHook': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(884): message : consulte a declaração de 'WSAUnhookBlockingHook'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2462,1): error C2375: 'WSASetBlockingHook': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(886): message : consulte a declaração de 'WSASetBlockingHook'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2480,1): error C2375: 'WSACancelBlockingCall': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(888): message : consulte a declaração de 'WSACancelBlockingCall'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2498,1): error C2375: 'WSAAsyncGetServByName': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(890): message : consulte a declaração de 'WSAAsyncGetServByName'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2526,1): error C2375: 'WSAAsyncGetServByPort': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(898): message : consulte a declaração de 'WSAAsyncGetServByPort'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2554,1): error C2375: 'WSAAsyncGetProtoByName': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(906): message : consulte a declaração de 'WSAAsyncGetProtoByName'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2580,1): error C2375: 'WSAAsyncGetProtoByNumber': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(913): message : consulte a declaração de 'WSAAsyncGetProtoByNumber'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2606,1): error C2375: 'WSAAsyncGetHostByName': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(920): message : consulte a declaração de 'WSAAsyncGetHostByName'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2632,1): error C2375: 'WSAAsyncGetHostByAddr': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(927): message : consulte a declaração de 'WSAAsyncGetHostByAddr'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2662,1): error C2375: 'WSACancelAsyncRequest': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(936): message : consulte a declaração de 'WSACancelAsyncRequest'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(2680,1): error C2375: 'WSAAsyncSelect': redefinição; vínculo diferente
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock.h(938): message : consulte a declaração de 'WSAAsyncSelect'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(4206,1): error C2059: erro de sintaxe: '}'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winsock2.h(4206,1): error C2143: erro de sintaxe: ';' ausente antes de '}'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_stdio_config.h(16,1): error C2143: erro de sintaxe: ';' ausente antes de '{'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_stdio_config.h(16,1): error C2447: '{': faltando cabeçalho de função (lista formal de estilo antigo?)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(309,41): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(338,43): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(371,43): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(725,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(756,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1063,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1062,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1085,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1084,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1157,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1156,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1258,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1257,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1306,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1305,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1341,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1340,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1374,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1373,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1893,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1926,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1972,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\corecrt_wstdio.h(1991,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(645,40): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(674,42): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(707,42): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1066,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1097,13): error C3861: '__local_stdio_scanf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1393,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1392,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1440,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1439,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1492,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1491,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1541,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1540,19): error C2737: '_Result': objetoconst deve ser inicializado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1579,13): error C3861: '__local_stdio_printf_options': identificador não encontrado
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdio.h(1579,13): fatal error C1003: contador de erros excede 100; interrompendo compilação
