@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Socket_Server_MultiClient", "Socket_Server_MultiClient\Socket_Server_MultiClient.vcxproj", "{BE813884-9BC3-43AD-B105-CB46BA63E290}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Debug|x64.ActiveCfg = Debug|x64
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Debug|x64.Build.0 = Debug|x64
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Debug|x86.ActiveCfg = Debug|Win32
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Debug|x86.Build.0 = Debug|Win32
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Release|x64.ActiveCfg = Release|x64
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Release|x64.Build.0 = Release|x64
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Release|x86.ActiveCfg = Release|Win32
+		{BE813884-9BC3-43AD-B105-CB46BA63E290}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2357409-CEB2-4F99-988E-169A6247E2EA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+﻿  Origem.cpp
+D:\Studying\Projects - Visual Studio\Socket_Server\Echo_Server\Origem.cpp(221,50): warning C4267: 'argumento': conversão de 'size_t' para 'int', possível perda de dados
+D:\Studying\Projects - Visual Studio\Socket_Server\Echo_Server\Origem.cpp(245,50): warning C4267: 'argumento': conversão de 'size_t' para 'int', possível perda de dados
+D:\Studying\Projects - Visual Studio\Socket_Server\Echo_Server\Origem.cpp(269,22): warning C4305: '=': truncamento de 'int' para 'char'
+D:\Studying\Projects - Visual Studio\Socket_Server\Echo_Server\Origem.cpp(269,18): warning C4309: '=': truncamento de valor constante
+  Echo_Server.vcxproj -> D:\Studying\Projects - Visual Studio\Socket_Server\x64\Debug\Echo_Server.exe

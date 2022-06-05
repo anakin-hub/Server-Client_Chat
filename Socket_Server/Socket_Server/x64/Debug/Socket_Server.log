@@ -1,0 +1,3 @@
+﻿  Origem.cpp
+D:\Studying\Projects - Visual Studio\Socket_Server\Socket_Server\Origem.cpp(17,14): warning C4101: 'message': variável local não referenciada
+  Socket_Server.vcxproj -> D:\Studying\Projects - Visual Studio\Socket_Server\x64\Debug\Socket_Server.exe
