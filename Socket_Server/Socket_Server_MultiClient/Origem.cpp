@@ -1,22 +1,18 @@
 #include<stdio.h>
 #include<winsock2.h>
 #include<iostream>
+#include<fstream>
+#include"Message.h"
 
 #define MAX_CON 5
 #define BF_SZ 100
+#define MAX_MSG 10
 
 using namespace std;
 
 #pragma comment(lib,"ws2_32.lib") //Winsock Library
 
 #pragma warning(disable : 4996)
-
-struct chat_protocol
-{
-	int id;
-	char nick[20];
-	char msg[100];
-};
 
 struct _client
 {
@@ -25,25 +21,36 @@ struct _client
 	SOCKET socket;		//Client socket
 	fd_set fset;		//used to check if there is data in the socket
 	int i;				//any piece of additional info
-	chat_protocol cp;
+	char nick[20];		//Client's nickname to connect
+	int id;				//number to identify the Client into program
 };
 
-void startserver();
-int accept(_client* x);
-int send(_client* x, char* buffer, int sz);
-int send(_client* x, char* buffer, int sz);
-void accept_clients();
+void startserver();//ok
+int accept(_client* x);//ok
+int send(_client* x, char* buffer, int sz);//ok
+int recv(_client* x, char* buffer, int sz);//ok 
+void accept_clients();//ok
 void recv_client();
-void Server_Status(int status);
-void disconnect(_client* x);
-void endserver();
-void midcopy(char* input, char* output, int start_pos, int stop_pos);
+void Server_Status(int status, char nick[20]);//ok
+void disconnect(_client* x);//ok
+void endserver();//ok
+void midcopy(char* input, char* output, int start_pos, int stop_pos);//ok
+void loadProfiles();//PRECISA CRIAR O ARQUIVO
+void addMessage(char* buffer, int sz, int id);//ok
+void loadMessage();//ok
+void saveMessage();//ok
+void delMessage(_client* x, int msg, int id);//PRECISA ARRUMAR NO CODIGO E AJEITAR A FUNÇÃO
+void editMessage(_client* x, int id, int msg, char* buffer);//PRECISA ARRUMAR NO CODIGO E AJEITAR A FUNÇÃO
+void removeMessage(int msg);//OK
+
 
 //Variables
 int cons = 0, c = 1;//numero maximo de conecções do servidor & conecções atuais
 SOCKET s, new_socket;//s socket do server & new_socket socket do servidor
 sockaddr_in server, client;
 _client clients[MAX_CON];
+int chatm = 0; //numero de mensagens salvas pelo servidor
+Message history[MAX_MSG];
 
 int main()
 {
@@ -127,6 +134,8 @@ void startserver()
 	//Accept and incoming connection
 	cout << "\nWaiting for incoming connections...\n";
 	for (int x = 0; x < MAX_CON; x++) { clients[x].con = FALSE; }
+	loadProfiles();
+	loadMessage();
 }
 
 int accept(_client* x)
@@ -149,7 +158,6 @@ int send(_client* x, char* buffer, int sz)
 	x->i = send(x->socket, buffer, sz, 0);
 	if (x->i == SOCKET_ERROR || x->i == 0)
 	{
-		cout << "nao enviou"<<sz<<"\t"<<x->i<< "\t" <<WSAGetLastError() << endl;
 		disconnect(x);
 		return (false);
 	}
@@ -159,22 +167,16 @@ int send(_client* x, char* buffer, int sz)
 
 int recv(_client* x, char* buffer, int sz)
 {
-	
-
-	if (FD_ISSET(x->socket, &x->fset))//problema
+	if (FD_ISSET(x->socket, &x->fset))
 	{
-		//cout << "info a receber\n";
 		x->i = recv(x->socket, buffer, sz, 0);
 		if (x->i == 0)
 		{
-			cout << "nao recebeu\n";
 			disconnect(x);
 			return (false);
 		}
-		//FD_ZERO(&x->fset);
 		return (true);
 	}
-
 	return (false);
 }
 
@@ -188,30 +190,32 @@ void accept_clients()
 			{
 				if (accept(&clients[i]))
 				{
-					//update server status
-					Server_Status(1);
+					Server_Status(1, clients[i].nick);
 				}
 			}
 		}
 	}
 }
 
-void Server_Status(int status)
+void Server_Status(int status, char nick[20])
 {
+	char c[100];
 	if (status == 1)
 	{
 		cons++;
-		cout << "\n a client has connected";
+		sprintf(c, "\n %s has connected", nick);
+		cout << c;
 	}
 	else if (status == -1)
 	{
 		cons--;
-		cout << "\n a client has disconnected";
+		sprintf(c, "\n %s has disconnected", nick);
+		cout << c;
 	}
 	else
 	{
 		//never leave out anything
-		cout << "\n>>>>>>We got an unknown message :" << status;
+		cout << "\nWe got an unknown message :" << status;
 	}
 }
 
@@ -222,7 +226,7 @@ void disconnect(_client* x) //this is called by the low level funtions
 	if (x->socket)closesocket(x->socket);
 	x->con = false;
 	x->i = -1;
-	Server_Status(-1);
+	Server_Status(-1, x->nick);
 }
 
 void endserver()
@@ -247,87 +251,155 @@ void chat_message(char* s)
 void recv_client()
 {
 	char buffer[BF_SZ];
-
+	int idv;
 
 		for (int i = 0; i < MAX_CON; i++)
 		{
 			if (clients[i].con)
 			{
 				memset(buffer, 0, BF_SZ);
+
 				if (recv(&clients[i], buffer, BF_SZ))
-				{
-					if (buffer[0] == '/')
+				{	
+					//cout << "\tb0:" << buffer[0] << "\tb1:" << buffer[1] << endl;
+					//system("pause");
+					if (buffer[0] >= 0+48 && buffer[0] <= 9+48/* && idv == clients[i].id*/)
 					{
-						//respond to commands
-						if (strcmp(buffer, "/server_bang") == 0)
+						idv = buffer[0];
+						idv -= 48;
+						cout << "cliente reconhecido" << endl;
+						midcopy(buffer, buffer, 1, BF_SZ);
+						if (buffer[0] == '/')
 						{
-							char c[] = "8*8* The Server Goes BANG *8*8";
-							chat_message(c);
-						}
-						else if (strcmp(buffer, "/quit") == 0)
-						{
-							disconnect(&clients[i]);
-							char c[] = "\na client has gone\n";
-							chat_message(c);
-							cout << c << endl;
-						}
-						else if (strstr(buffer, "/log") != NULL)
-						{
-							midcopy(buffer, clients[i].cp.nick, 4, sizeof(clients[i].cp.nick));
-							cout << clients[i].cp.nick << endl;
-							char c[30];
-							sprintf(c, "%s está conectado", clients[i].cp.nick);
-							chat_message(c);
-						}
-						else if (strcmp(buffer, "/users") == 0)
-						{
-							memset(buffer, 0, BF_SZ);
-							for (int j = 0; j < MAX_CON; j++)
+							//respond to commands
+							if (strcmp(buffer, "/server_bang") == 0)
 							{
-								if (clients[j].con)
-								{
-									strcat(buffer, clients[j].cp.nick);
-									strcat(buffer, "\n");
-								}
+								char c[] = "8*8* The Server Goes BANG *8*8";
+								chat_message(c);
 							}
-							send(&clients[i], buffer, BF_SZ);
-						}
-						else if (strstr(buffer, "/tell") != NULL)
-						{
-							char c[120];
-							midcopy(buffer, c, 5, sizeof(buffer));
-							memset(buffer, 0, BF_SZ);
-							for (int n = 0; n < MAX_CON; n++)
+							else if (strcmp(buffer, "/quit") == 0)
 							{
-								int nlen = strlen(clients[n].cp.nick);
-								if (nlen > 0)
+								disconnect(&clients[i]);
+								char c[] = "\na client has gone\n";
+								chat_message(c);
+								cout << c << endl;
+							}
+							else if (strcmp(buffer, "/users") == 0)
+							{
+								memset(buffer, 0, BF_SZ);
+								for (int j = 0; j < MAX_CON; j++)
 								{
-									char nm[20];
-									midcopy(c, nm, 0, nlen);
-									if (strcmp(nm, clients[n].cp.nick) == 0)
-									{	
-										midcopy(c, c, nlen, sizeof(c));
-										sprintf(buffer, "%s enviou uma mensagem:%s", clients[i].cp.nick, c);
-										send(&clients[n], buffer, BF_SZ);
+									if (clients[j].con)
+									{
+										strcat(buffer, clients[j].nick);
+										strcat(buffer, "\n");
 									}
 								}
-							
+								send(&clients[i], buffer, BF_SZ);
 							}
+							else if (strstr(buffer, "/tell") != NULL)
+							{
+								char c[120];
+								midcopy(buffer, c, 5, sizeof(buffer));
+								memset(buffer, 0, BF_SZ);
+								for (int n = 0; n < MAX_CON; n++)
+								{
+									int nlen = strlen(clients[n].nick);
+									if (nlen > 0)
+									{
+										char nm[20];
+										midcopy(c, nm, 0, nlen);
+										if (strcmp(nm, clients[n].nick) == 0)
+										{
+											midcopy(c, c, nlen, sizeof(c));
+											sprintf(buffer, "%s enviou uma mensagem:%s", clients[i].nick, c);
+											send(&clients[n], buffer, BF_SZ);
+										}
+									}
+
+								}
+							}
+							else if (strstr(buffer, "/hist") != NULL)
+							{
+								memset(buffer, 0, BF_SZ);
+								char c[2050];
+								for (int b = 0; b < chatm; b++)
+								{
+									for (int a = 0; a < MAX_CON; a++)
+									{
+										if (a == 0 && b == 0)
+										{
+											sprintf(c, "___HISTÓRICO___\n");
+										}
+										if (history[b].getId() == clients[a].id)
+										{
+											memset(buffer, 0, BF_SZ);
+											sprintf(buffer, "[%d] %s: %s\n", b, clients[a].nick, history[b].getText());
+											strcat(c, buffer);
+										}
+										if (b == chatm-1 && a == MAX_CON-1)
+										{
+											strcat(c, "___FIM___\n");
+										}
+									}
+								}
+								cout << c << endl;
+								send(&clients[i], c, 2050);
+							}
+							else if (strstr(buffer, "/edit") != NULL)
+							{
+								int msg = buffer[5] - 48;
+								midcopy(buffer, buffer, 6, sizeof(buffer));
+								editMessage(&clients[i], idv, msg, buffer);
+							}
+							else if (strstr(buffer, "/del") != NULL)
+							{
+								int msg = buffer[4] - 48;
+
+								delMessage(&clients[i], msg, idv);
+							}
+							
 						}
 						else
 						{
 							cout << endl;
 							cout << buffer << endl;
-							//cout << "recebeu algo com / \n";
-
-							chat_message(buffer);
+							addMessage(buffer, BF_SZ, idv);
+							char* msg = new char[BF_SZ];
+							sprintf(msg, "%s: %s\n", clients[i].nick, buffer);
+							chat_message(msg);
+							saveMessage();
 						}
 					}
-					else
-					{
-						/*cout << "tenta enviar mensagem\n";
-						chat_message(buffer);*/
-					}
+					else if (strstr(buffer, "/log") != NULL)
+						{
+						midcopy(buffer, clients[i].nick, 4, sizeof(clients[i].nick));
+						cout << clients[i].nick << endl;
+						char c[30];
+						sprintf(c, "%d", clients[i].id);
+						send(&clients[i], c, 20);
+
+						/*memset(c, 0, 20);
+						sprintf(c, "%s está conectado", clients[i].nick);
+						chat_message(c);*/						
+						}
+					//else if (strstr(buffer, "/log") != NULL)
+					//{
+					//	char c[20];
+					//	sprintf(c, "/log%s", clients[i].nick);
+					//	cout << "\npassou do log\n" << c << endl << buffer << endl;
+					//	if (strcmp(buffer, c) == 0)
+					//	{
+					//		cout << "\naqui\n";
+					//		memset(c, 0, 20);
+					//		sprintf(c, "%d", clients[i].id);
+					//		send(&clients[i], c, 20);
+					/*		memset(c, 0, 20);
+							sprintf(c, "%s esta conectado", clients[i].nick);
+							chat_message(c);*/
+					//	}
+					//}
+					
 				}
 			}
 		}
@@ -346,73 +418,112 @@ void midcopy(char* input, char* output, int start_pos, int stop_pos)
 	output[index] = 0;
 }
 
-//void receive_data()
-//{
-//	char buffer[BUFFER_SIZE];
-//
-//	for (int j = 0; j < MAX_CLIENTS; j++)
-//	{
-//		if (client[j].connected)
-//		{
-//			//cout << "usuario: " << j << "conected!\n"; //erro no codigo, não detecta quem desconecta no instante
-//			if (receive_client(&client[j], buffer, BUFFER_SIZE))
-//			{
-//				if (buffer[0] == '~')
-//				{ // All data should be buffered by a '~' just because
-//
-//					if (buffer[1] == '1') // Add Client Command
-//					{
-//						// Declare the buffer to store new client information into
-//						char raw_data[BUFFER_SIZE];
-//
-//						// Parse out the 'Add Client' command
-//						midcopy(buffer, raw_data, 3, strlen(buffer));
-//
-//						// Store the client information into our RAM client database
-//						sscanf(raw_data, "%s %s %s", client[j].template_name, client[j].screen_name, client[j].siegepos);
-//
-//						for (int k = 0; k < MAX_CLIENTS; k++)
-//						{
-//							if ((client[k].connected) && (j != k))
-//							{
-//								// Parse in the client data to send
-//								sprintf(raw_data, "~1 %s %s %s", client[k].template_name, client[k].screen_name, client[k].siegepos);
-//
-//								// Send the client data
-//								send_data(&client[j], raw_data, BUFFER_SIZE);
-//							}
-//						}
-//					}
-//					else if (buffer[1] == '2') // Move Client Command
-//					{
-//						// Declare the buffer to store new client information into
-//						char raw_data[BUFFER_SIZE];
-//
-//						// Parse out the 'Move Client' command
-//						midcopy(buffer, raw_data, 3, strlen(buffer));
-//
-//						// Update the client information into our RAM client database
-//						sscanf(raw_data, "%s %s", client[j].screen_name, client[j].siegepos);
-//					}
-//					else if (buffer[1] == '3') // Chat Client Command
-//					{
-//						// ECHO THE MESSAGE BACK TO ALL CLIENTS
-//					}
-//					else if (buffer[1] == '4') // Remove Client Command
-//					{
-//						// Disconnect the current client
-//						disconnect_client(&client[j]);
-//					}
-//
-//					// Display all data received
-//					// cout << buffer << endl;
-//
-//					// Echo the message to the other clients
-//					echo_message(buffer);
-//
-//					// Clear the buffer
-//					buffer[0] = '/0';
-//				}
-//			}
-//		}
-//	}
+void loadProfiles()
+{
+	ifstream ifs("profiles.txt", ios::in);
+
+	if (ifs.is_open())
+	{
+		int idt;
+		for (int i = 0; i < MAX_CON; i++)
+		{
+			ifs >> idt;
+			clients[i].id = idt;
+		}
+		ifs.close();
+	}
+}
+
+void addMessage(char* buffer, int sz, int id)
+{
+	if (chatm < MAX_MSG)
+	{
+		history[chatm].setId(id);
+		history[chatm].setText(buffer);
+		chatm++;
+	}
+	else
+	{
+		removeMessage(1);
+		addMessage(buffer, sz, id);
+	}
+}
+
+void loadMessage()
+{
+	ifstream ifs("historico.txt", ios::in);
+
+	if (ifs.is_open())
+	{
+		ifs >> chatm;
+		int idt;
+		char textot[100];
+		for (int i = 0; i < chatm; i++)
+		{
+			ifs >> idt;
+			ifs.ignore();
+			ifs.getline(textot, 100);
+			history[i].setId(idt);
+			history[i].setText(textot);
+		}
+		ifs.close();
+	}
+}
+
+void saveMessage()
+{
+	ofstream ifs;
+	ifs.open("historico.txt");
+	if (ifs.is_open())
+	{
+		ifs << chatm << endl;
+		for (int i = 0; i < chatm; i++)
+		{
+			ifs << history[i].getId() << endl;
+			ifs << history[i].getText() << endl;
+		}
+
+		ifs.close();
+	}
+}
+
+void delMessage(_client* x, int msg, int id)
+{
+	if (history[msg].getId() == id)
+	{
+		removeMessage(msg);
+		char c[] = "mensagem excluida com sucesso\n";
+		send(x, c, sizeof(c));
+	}
+	else
+	{
+		char c[] = "essa mensagem nao pode ser excluida\n";
+		send(x, c, sizeof(c));
+	}
+}
+
+void editMessage(_client *x, int id, int msg, char* buffer)
+{
+	if (history[msg].getId() == id)
+	{
+		history[msg].setText(buffer);
+		saveMessage();
+		char c[] = "mensagem salva com sucesso\n";
+		send(x, c, sizeof(c));
+	}
+	else
+	{
+		char c[] = "essa mensagem nao pode ser editada\n";
+		send(x, c, sizeof(c));
+	}
+}
+
+void removeMessage(int msg)
+{
+	for (int i = msg; i < chatm; i++)
+	{
+		history[i - 1] = history[i];
+	}
+	chatm--;
+	saveMessage();
+}

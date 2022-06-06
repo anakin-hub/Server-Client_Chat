@@ -13,7 +13,6 @@ struct chat_protocol
 {
 	int id;
 	char nick[20];
-	char msg[100];
 };
 
 //Function's call
@@ -30,9 +29,6 @@ int main()
 {
 	WSADATA wsa;
 	struct sockaddr_in server;
-	
-	
-	
 	
 	cout << "Insira o nick: ";
 	cin >> protc.nick;
@@ -71,9 +67,7 @@ int main()
 	cin.ignore();
 	
 	thread receiveData(recv_data);
-	//receiveData.join();
 	thread sendData(send_data);
-	//sendData.join();
 	
 	while (true)
 	{
@@ -81,8 +75,6 @@ int main()
 
 		
 	}
-
-	printf("acabou");
 
 	closesocket(s);
 	WSACleanup();
@@ -97,11 +89,15 @@ void send_data()
 	while (true)
 	{
 		memset(message, 0, sizeof(message));
-		cout << "Digite uma mensagem: ";
 		cin.getline(message, 50);
-
-		check = send(s, message, strlen(message), 0);
-
+		char* buffer = new char[sizeof(message) + 2];
+		sprintf(buffer, "%d%s", protc.id, message);
+		if (strstr(buffer, "/hist") != NULL)
+		{
+			system("CLS");
+		}
+		check = send(s, buffer, strlen(buffer), 0);    
+		
 		if (check == 0)
 		{
 			puts("\nSERVER terminated connection");
@@ -112,7 +108,8 @@ void send_data()
 			puts("\nSOCKET error");
 			disconect(check);
 		}
-		puts("Data Send\n");
+		//puts("Data Send\n");
+		
 	}
 }
 
@@ -156,4 +153,21 @@ void login()
 	char msg[20];
 	sprintf(msg, "/log%s", protc.nick);
 	send(s, msg, 20, 0);
+	char server_reply[2100];
+	int id, check;
+	check = recv(s, server_reply, 2000, 0);
+	if (check == SOCKET_ERROR)
+	{
+		puts("receive failed");
+	}
+	else if (check > 0)
+	{
+		server_reply[check] = '\0';
+		id = server_reply[0] - 48;
+		cout << "\nid:" << id << endl;
+		if (id >= 0 && id <= 9)
+		{
+			protc.id = id;
+		} 
+	}
 }
