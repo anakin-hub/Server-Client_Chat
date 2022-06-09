@@ -203,13 +203,13 @@ void Server_Status(int status, char nick[20])
 	if (status == 1)
 	{
 		cons++;
-		sprintf(c, "\n %s has connected", nick);
+		sprintf(c, "\num usuario conectou");
 		cout << c;
 	}
 	else if (status == -1)
 	{
 		cons--;
-		sprintf(c, "\n %s has disconnected", nick);
+		sprintf(c, "\num usuario desconectou");
 		cout << c;
 	}
 	else
@@ -267,7 +267,6 @@ void recv_client()
 					{
 						idv = buffer[0];
 						idv -= 48;
-						cout << "cliente reconhecido" << endl;
 						midcopy(buffer, buffer, 1, BF_SZ);
 						if (buffer[0] == '/')
 						{
@@ -329,7 +328,7 @@ void recv_client()
 									{
 										if (a == 0 && b == 0)
 										{
-											sprintf(c, "___HISTÓRICO___\n");
+											sprintf(c, "___HISTORICO___\n");
 										}
 										if (history[b].getId() == clients[a].id)
 										{
@@ -374,7 +373,7 @@ void recv_client()
 					else if (strstr(buffer, "/log") != NULL)
 						{
 						midcopy(buffer, clients[i].nick, 4, sizeof(clients[i].nick));
-						cout << clients[i].nick << endl;
+						cout << ":\t" << clients[i].nick << endl;
 						char c[30];
 						sprintf(c, "%d", clients[i].id);
 						send(&clients[i], c, 20);
@@ -491,6 +490,7 @@ void delMessage(_client* x, int msg, int id)
 {
 	if (history[msg].getId() == id)
 	{
+		cout << "\t\tmsg: " << msg << endl;
 		removeMessage(msg);
 		char c[] = "mensagem excluida com sucesso\n";
 		send(x, c, sizeof(c));
@@ -506,6 +506,7 @@ void editMessage(_client *x, int id, int msg, char* buffer)
 {
 	if (history[msg].getId() == id)
 	{
+		cout << "\t\tmsg: " << msg << endl;
 		history[msg].setText(buffer);
 		saveMessage();
 		char c[] = "mensagem salva com sucesso\n";
@@ -522,7 +523,7 @@ void removeMessage(int msg)
 {
 	for (int i = msg; i < chatm; i++)
 	{
-		history[i - 1] = history[i];
+		history[i] = history[i+1];
 	}
 	chatm--;
 	saveMessage();
